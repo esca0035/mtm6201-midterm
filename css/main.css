@@ -1,3 +1,6 @@
+*{
+  box-sizing: border-box;
+}
 .homepage{
      background-image: url("/images/background.png");
   width: 100%;
@@ -5,19 +8,20 @@
   justify-content: space-between;
   flex-direction: row;
   background-size: cover;
-  height:   250px;;
+  height:   230px;;
   
     
 }
-.homepage .logo{
+.homepage .logo img{
     display: flex;
+    width: 400px;
 }
 
-header{
-    color: white;
+h1{
+    color: rgb(41, 25, 4);
     font-family: 'Times New Roman', Times, serif;
-    font-size: 60px;
-    text-align: center;
+    font-size: 100px;
+    padding-right: 300px;
 }
 
 
@@ -26,19 +30,16 @@ body
 {
   margin: 0;
   padding: 0;
-  
-  /* make it look decent enough */
-  
-  color: #000000;
-  font-family: "Avenir Next", "Avenir", sans-serif;
+  color: #a37554;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 #menuToggle
 {
   display: block;
-  position: relative;
-  top: 50px;
+top: 50px;
   left: 50px;
+  position: relative;
   
   z-index: 1;
   
@@ -49,127 +50,84 @@ body
 #menuToggle a
 {
   text-decoration: none;
-  color: #232323;
+  color: white;
   
-  transition: color 0.3s ease;
+  transition: color 0.5s ease-in;
 }
 
 #menuToggle a:hover
 {
-  color: tomato;
+  color: #a37554;
 }
 
 
 #menuToggle input
 {
   display: block;
-  width: 40px;
-  height: 32px;
+  width: 50px;
+  height: 50px;
   position: absolute;
   top: -7px;
   left: -5px;
   
   cursor: pointer;
   
-  opacity: 0; /* hide this */
-  z-index: 2; /* and place it over the hamburger */
+  opacity: 0; 
+  z-index: 2; 
   
-  -webkit-touch-callout: none;
+  
 }
 
-/*
- * Just a quick hamburger
- */
+
 #menuToggle span
 {
   display: block;
-  width: 33px;
-  height: 4px;
+  width: 50px;
+  height: 5px;
   margin-bottom: 5px;
   position: relative;
   
-  background: #cdcdcd;
+  background: #fffefe;
   border-radius: 3px;
   
   z-index: 1;
   
-  transform-origin: 4px 0px;
+  transform-origin: 5px 0px;
   
-  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-              opacity 0.55s ease;
+ 
 }
 
-#menuToggle span:first-child
-{
-  transform-origin: 0% 0%;
-}
 
-#menuToggle span:nth-last-child(2)
-{
-  transform-origin: 0% 100%;
-}
 
-/* 
- * Transform all the slices of hamburger
- * into a crossmark.
- */
-#menuToggle input:checked ~ span
-{
-  opacity: 1;
-  transform: rotate(45deg) translate(-2px, -1px);
-  background: #232323;
-}
 
-/*
- * But let's hide the middle one.
- */
-#menuToggle input:checked ~ span:nth-last-child(3)
-{
-  opacity: 0;
-  transform: rotate(0deg) scale(0.2, 0.2);
-}
 
-/*
- * Ohyeah and the last one should go the other direction
- */
-#menuToggle input:checked ~ span:nth-last-child(2)
-{
-  transform: rotate(-45deg) translate(0, -1px);
-}
-
-/*
- * Make this absolute positioned
- * at the top left of the screen
- */
 #menu
 {
   position: absolute;
-  width: 300px;
+  width: 150px;
   margin: -100px 0 0 -50px;
-  padding: 50px;
-  padding-top: 125px;
+  padding: 200px;
+  padding-top: 500px;
   
-  background: #ededed;
-  list-style-type: none;
+  background: #504238;
+  
   -webkit-font-smoothing: antialiased;
-  /* to stop flickering of text in safari */
+  
   
   transform-origin: 0% 0%;
   transform: translate(-100%, 0);
   
-  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  transition: transform 0.6s cubic-bezier(0.77,0.2,0.05,1.0);
 }
 
 #menu li
 {
-  padding: 10px 0;
+  padding: 30px 0;
   font-size: 22px;
+  padding-right: 10px;
 }
 
-/*
- * And let's slide it in from the left
- */
+
 #menuToggle input:checked ~ ul
 {
   transform: none;
@@ -206,3 +164,183 @@ body
     display: inline-block;
 }
 
+/* products page */
+#products {
+    display: grid;
+  
+   max-width: 1019px; 
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 0 auto;
+  }
+  
+  .product-slider {
+    flex: 1; 
+    margin: 25px;
+    text-align: center;
+    max-width: 400px; 
+  }
+  
+  .wrapper {
+  
+    padding: 30px;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+  }
+
+
+
+
+
+/*contact page*/
+
+#contact h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 30px;
+    
+    
+    
+}
+
+#contact-box form {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 30px;
+}
+
+#contact-box input[type="text"],
+#contact-box textarea {
+    border: 1px solid black;
+    width: 200px;
+    margin: 30px;
+}
+
+#contact textarea {
+    resize: none;
+    width: 91.5%;
+    height: 250px;
+    
+    
+}
+
+.contact-button {
+    border: solid black 2px;
+    width: max-content;
+    padding: 0.5rem;
+}
+
+#contact button {
+    width: 15%;
+    font-size: 1.3rem;
+    background-color: rgb(155, 107, 86)999;
+    color: #060606dc;
+    
+}
+
+
+
+table {
+    width: 100%;
+    height: auto;
+}
+
+table, th, td {
+    border: 0.5px solid black;
+    padding: 1rem;
+}
+
+thead {
+    background-color: moccasin;
+    height: 1rem;
+}
+
+
+
+#location h3 {
+    padding-bottom: 1rem;
+}
+
+iframe {
+    height: 450px;
+    width: 100%;
+}
+
+
+
+footer{
+    margin: 50px;
+    display: flex;
+    justify-content: space-between;
+  
+  }
+  footer button{
+    width: 50px;
+    height: 30px;
+  
+  }
+  footer input{
+    height: 20px;
+    width: 20px;
+  }
+  
+  .containercart {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    
+  }
+  
+  .cart {
+   width: 220px;
+   height: 220px;
+   position: relative;
+   overflow: hidden;
+   
+   padding: 0;
+  }
+  .cart:nth-child(4){
+    overflow:visible;
+    
+  }
+  
+  .cart img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    margin: 0px 0px;
+    padding: 10px;
+    
+
+  }
+
+  .button-order-here{
+    float: right;
+    
+  }
+  
+  .content {
+    padding: 20px;
+    width: 300px;
+  }
+  
+  h3, p {
+    margin: 30px;
+  }
+
+  h2{
+    margin: 30px;
+  }
+
+  .btn{
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: none;
+    color: #504238;
+    
+  }

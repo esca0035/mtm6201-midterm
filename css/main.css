@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 .homepage{
-     background-image: url("/images/background.png");
+     background-image: url("../images/background.png");
   width: 100%;
   display: flex;
   justify-content: space-between;

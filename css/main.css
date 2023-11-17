@@ -3,6 +3,7 @@
   
   
 }
+/* homepage */
 .homepage{
      background-image: url("../images/back.png");
   width: 100%;
@@ -37,7 +38,7 @@ body
   color: #a37554;
   font-family: 'Times New Roman', Times, serif;
 }
-
+/* hamburger menu */
 #menuToggle
 {
   display: block;
@@ -388,7 +389,7 @@ border: #504238;
 
 
 
-
+/* media query */
   @media only screen and (max-width: 767px) {
     /* home page */
   
